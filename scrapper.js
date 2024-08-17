@@ -14,12 +14,3 @@ async function scrapeData(url) {
 }
 
 module.exports = scrapeData;
-
-const express = require('express');
-const scrapeData = require('./scraper');
-
-app.post('/scrape', async (req, res) => {
-    const { url } = req.body;
-    const data = await scrapeData(url);
-    res.json({ data });
-});
